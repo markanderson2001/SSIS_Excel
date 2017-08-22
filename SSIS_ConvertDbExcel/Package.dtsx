@@ -11,11 +11,26 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{85298D9F-2372-45A1-AF01-9678A70F5D94}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{F11CB67C-7E02-4298-9F75-665B5F3D0E36}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DEVELOP-2016\MSSQLSERV2016DEV.ADPCt830.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EC566CC1-932F-4FEE-9BC0-ABBDA45D72A5}"
+      DTS:ObjectName="DEVELOP-2016\MSSQLSERV2016DEV.ADPCt830.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DEVELOP-2016\MSSQLSERV2016DEV;User ID=sa;Initial Catalog=ADPCt830;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjdhRb7jMAky16gWnnTZASwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADfSh6dB2WhV+DVm4hG9YBa5M2MdGstRBud12BkcliCswAAAAAOgAAAAAIAACAAAAA5awL/hXxfZGNkNUM5Fhi1ZYzEgFRgiSuJ9qcAkka6cCAAAADebWklxQj8Fix+n11LkOofYPuANSK7PgYrb88HMeS24EAAAABDbb1HSBr2d9Fb75NKRx1fw81/bkdFA0zvmIgPG+DY9wdCSz4lsnobFuu96PufJIYdH6LPSQ8/IgpZFIFJAxLx</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
@@ -23,7 +38,7 @@
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Shared\GitHub\Project Files\SSIS_ConvertDbExcel\TR_TchecksList.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Shared\GitHub\Project Files\SSIS_ConvertDbExcel\TR_TchecksList.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -31,6 +46,16 @@
       DTS:CreationName="EXCEL"
       DTS:DTSID="{AFCAFAE8-D68C-4E5E-A2B0-394F8A56BA95}"
       DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Shared\GitHub\Project Files\SSIS_ConvertDbExcel\TR_TchecksList.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{3BC30CB1-1744-4162-8FD9-59484107D535}"
+      DTS:ObjectName="Excel Connection Manager 2">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Shared\GitHub\Project Files\SSIS_ConvertDbExcel\TR_TchecksList.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
@@ -66,71 +91,83 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_acctnum]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="tr_acctnum"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_acctnum]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_descrip]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="tr_descrip"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_descrip]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_amount]"
-                      cachedDataType="numeric"
-                      cachedName="tr_amount"
-                      cachedPrecision="18"
-                      cachedScale="4"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_amount]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="tr_date"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_date]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_num]"
-                      cachedDataType="numeric"
-                      cachedName="tr_num"
-                      cachedPrecision="18"
-                      cachedScale="4"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_num]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tchkdate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="tchkdate"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tchkdate]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_class]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="26"
-                      cachedName="tr_class"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_class]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_directdep]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1"
-                      cachedName="tr_directdep"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_directdep]" />
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]" />
                     <inputColumn
                       refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[year]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="year"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[year]" />
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="tr_type"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_type]" />
                     <inputColumn
                       refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_posted]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="tr_posted"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_posted]" />
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_posted]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_acctnum]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="tr_acctnum"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_acctnum]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_descrip]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="tr_descrip"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_descrip]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_amount]"
+                      cachedDataType="numeric"
+                      cachedName="tr_amount"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_amount]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="tr_date"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_date]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_num]"
+                      cachedDataType="numeric"
+                      cachedName="tr_num"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_num]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tchkdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="tchkdate"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tchkdate]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_class]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="26"
+                      cachedName="tr_class"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_class]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input].Columns[tr_directdep]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="tr_directdep"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_directdep]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -142,6 +179,89 @@
                   name="Data Conversion Output"
                   synchronousInputId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of id]"
+                      name="Copy of id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of year]"
+                      name="Copy of year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_type]"
+                      name="Copy of tr_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_posted]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_posted]"
+                      name="Copy of tr_posted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_posted]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
                       refId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_acctnum]"
                       dataType="wstr"
@@ -156,7 +276,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_acctnum]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_acctnum]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -177,7 +297,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_descrip]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_descrip]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -199,7 +319,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_amount]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_amount]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -219,7 +339,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_date]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_date]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -241,7 +361,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_num]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_num]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -261,7 +381,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tchkdate]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tchkdate]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -282,7 +402,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_class]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_class]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -303,49 +423,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_directdep]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of year]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="4"
-                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of year]"
-                      name="Copy of year"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[year]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_posted]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_posted]"
-                      name="Copy of tr_posted"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_posted]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_directdep]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -394,7 +472,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Excel_Destination</property>
+                  name="OpenRowset">Excel_Destination2</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -429,8 +507,8 @@
               <connections>
                 <connection
                   refId="Package\Import Treasury Checks into Excel\Excel Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -442,6 +520,26 @@
                   hasSideEffects="true"
                   name="Excel Destination Input">
                   <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of id]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of tr_type]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Copy of tr_type"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_type]"
+                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_type]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of tr_posted]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Copy of tr_posted"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_posted]"
+                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_posted]" />
                     <inputColumn
                       refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of tr_acctnum]"
                       cachedDataType="wstr"
@@ -456,6 +554,14 @@
                       cachedName="Copy of tr_descrip"
                       externalMetadataColumnId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_descrip]"
                       lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_descrip]" />
+                    <inputColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of tr_amount]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of tr_amount"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_amount]"
+                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_amount]" />
                     <inputColumn
                       refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of tr_date]"
                       cachedDataType="dbTimeStamp"
@@ -497,24 +603,25 @@
                       cachedName="Copy of year"
                       externalMetadataColumnId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[year]"
                       lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of year]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of tr_posted]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of tr_posted"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_posted]"
-                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_posted]" />
-                    <inputColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of tr_amount]"
-                      cachedDataType="numeric"
-                      cachedName="Copy of tr_amount"
-                      cachedPrecision="18"
-                      cachedScale="4"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_amount]"
-                      lineageId="Package\Import Treasury Checks into Excel\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tr_amount]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[id]"
+                      dataType="r8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[year]"
+                      dataType="nText"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_type]"
+                      dataType="nText"
+                      name="tr_type" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_posted]"
+                      dataType="nText"
+                      name="tr_posted" />
                     <externalMetadataColumn
                       refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_acctnum]"
                       dataType="nText"
@@ -547,54 +654,6 @@
                       refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_directdep]"
                       dataType="nText"
                       name="tr_directdep" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[year]"
-                      dataType="nText"
-                      name="year" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_posted]"
-                      dataType="nText"
-                      name="tr_posted" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_acctnum]"
-                      dataType="nText"
-                      name="Copy of tr_acctnum" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_descrip]"
-                      dataType="nText"
-                      name="Copy of tr_descrip" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_amount]"
-                      dataType="r8"
-                      name="Copy of tr_amount" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_date]"
-                      dataType="date"
-                      name="Copy of tr_date" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_num]"
-                      dataType="r8"
-                      name="Copy of tr_num" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tchkdate]"
-                      dataType="date"
-                      name="Copy of tchkdate" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_class]"
-                      dataType="nText"
-                      name="Copy of tr_class" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_directdep]"
-                      dataType="nText"
-                      name="Copy of tr_directdep" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of year]"
-                      dataType="nText"
-                      name="Copy of year" />
-                    <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_posted]"
-                      dataType="nText"
-                      name="Copy of tr_posted" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -624,11 +683,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks"
+              refId="Package\Import Treasury Checks into Excel\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source -TR_Tchecks"
+              name="OLE DB Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -673,188 +732,208 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Connections[OleDbConnection]"
-                  connectionManagerID="{468E7825-594B-46FF-9BB8-A0C7F2012DAF}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[(local).ADPCt830.sa]"
+                  refId="Package\Import Treasury Checks into Excel\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DEVELOP-2016\MSSQLSERV2016DEV.ADPCt830.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[DEVELOP-2016\MSSQLSERV2016DEV.ADPCt830.sa]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output]"
+                  refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_acctnum]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_acctnum]"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      length="4"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_type]"
+                      length="1"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_type]"
+                      name="tr_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_posted]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_posted]"
+                      length="1"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_posted]"
+                      name="tr_posted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_acctnum]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_acctnum]"
                       length="3"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_acctnum]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_acctnum]"
                       name="tr_acctnum"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_descrip]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_descrip]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_descrip]"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_descrip]"
                       length="30"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_descrip]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_descrip]"
                       name="tr_descrip"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_amount]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_amount]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_amount]"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_amount]"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_amount]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_amount]"
                       name="tr_amount"
                       precision="18"
                       scale="4"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_date]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_date]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_date]"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_date]"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_date]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_date]"
                       name="tr_date"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_num]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_num]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_num]"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_num]"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_num]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_num]"
                       name="tr_num"
                       precision="18"
                       scale="4"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tchkdate]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tchkdate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tchkdate]"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tchkdate]"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tchkdate]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tchkdate]"
                       name="tchkdate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_class]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_class]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_class]"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_class]"
                       length="26"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_class]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_class]"
                       name="tr_class"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_directdep]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_directdep]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_directdep]"
+                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_directdep]"
                       length="1"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_directdep]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].Columns[tr_directdep]"
                       name="tr_directdep"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[year]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[year]"
-                      length="4"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[year]"
-                      name="year"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_posted]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_posted]"
-                      length="1"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].Columns[tr_posted]"
-                      name="tr_posted"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
                       dataType="i4"
                       name="id" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[year]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="year" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_type]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_type]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="tr_type" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_posted]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_posted]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="tr_posted" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_acctnum]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_acctnum]"
                       codePage="1252"
                       dataType="str"
                       length="3"
                       name="tr_acctnum" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_descrip]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_descrip]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="tr_descrip" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_amount]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_amount]"
                       dataType="numeric"
                       name="tr_amount"
                       precision="18"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_date]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_date]"
                       dataType="dbTimeStamp"
                       name="tr_date" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_num]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_num]"
                       dataType="numeric"
                       name="tr_num"
                       precision="18"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tchkdate]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tchkdate]"
                       dataType="dbTimeStamp"
                       name="tchkdate" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_class]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_class]"
                       codePage="1252"
                       dataType="str"
                       length="26"
                       name="tr_class" />
                     <externalMetadataColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output].ExternalColumns[tr_directdep]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tr_directdep]"
                       codePage="1252"
                       dataType="str"
                       length="1"
@@ -862,88 +941,100 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
                       dataType="i4"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[year]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[year]"
+                      name="year" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_acctnum]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_type]"
+                      name="tr_type" />
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_posted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_posted]"
+                      name="tr_posted" />
+                    <outputColumn
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_acctnum]"
                       codePage="1252"
                       dataType="str"
                       length="3"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_acctnum]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_acctnum]"
                       name="tr_acctnum" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_descrip]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_descrip]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_descrip]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_descrip]"
                       name="tr_descrip" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_amount]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_amount]"
                       dataType="numeric"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_amount]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_amount]"
                       name="tr_amount"
                       precision="18"
                       scale="4" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_date]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_date]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_date]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_date]"
                       name="tr_date" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_num]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_num]"
                       dataType="numeric"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_num]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_num]"
                       name="tr_num"
                       precision="18"
                       scale="4" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tchkdate]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tchkdate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tchkdate]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tchkdate]"
                       name="tchkdate" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_class]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_class]"
                       codePage="1252"
                       dataType="str"
                       length="26"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_class]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_class]"
                       name="tr_class" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_directdep]"
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_directdep]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_directdep]"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tr_directdep]"
                       name="tr_directdep" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[year]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[year]"
-                      name="year" />
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
                     <outputColumn
-                      refId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_posted]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Error Output].Columns[tr_posted]"
-                      name="tr_posted" />
+                      refId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -960,7 +1051,7 @@
               refId="Package\Import Treasury Checks into Excel.Paths[OLE DB Source Output]"
               endId="Package\Import Treasury Checks into Excel\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks.Outputs[OLE DB Source Output]" />
+              startId="Package\Import Treasury Checks into Excel\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -980,6 +1071,15 @@
           VSTAMajorVersion="14"
           VSTAMinorVersion="0"
           Language="CSharp">
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1099,35 +1199,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_652ff073be7a4e748f6dfa2d514b723b.Properties.Settings.get_Default():ST_652ff073be7a4e748f6dfa2d514b723b.Properties.Sett" +
-    "ings")]
-
-namespace ST_652ff073be7a4e748f6dfa2d514b723b.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -1266,37 +1337,34 @@ namespace ST_652ff073be7a4e748f6dfa2d514b723b
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_652ff073be7a4e748f6dfa2d514b723b")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_652ff073be7a4e748f6dfa2d514b723b")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_652ff073be7a4e748f6dfa2d514b723b.Properties.Settings.get_Default():ST_652ff073be7a4e748f6dfa2d514b723b.Properties.Sett" +
+    "ings")]
 
-
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_652ff073be7a4e748f6dfa2d514b723b.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
           <ProjectItem
             Name="ST_652ff073be7a4e748f6dfa2d514b723b.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1383,14 +1451,37 @@ using System.Runtime.CompilerServices;
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_652ff073be7a4e748f6dfa2d514b723b")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_652ff073be7a4e748f6dfa2d514b723b")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1595,13 +1686,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="131,42"
-          Id="Package\Script Task"
-          TopLeft="125,112" />
-        <NodeLayout
           Size="240,42"
           Id="Package\Import Treasury Checks into Excel"
           TopLeft="111,241" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Script Task"
+          TopLeft="125,112" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="190.5,154">
@@ -1640,7 +1731,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Text="Package to IMport Data for Excel - Treasury and Trends"
           ParentId="Package"
           FontInfo="{assembly:Null}"
-          Size="318,60"
+          Size="318,40"
           Id="6cefff82-a765-461c-9c4f-2f32657f1755"
           TopLeft="417,16" />
       </GraphLayout>
@@ -1652,43 +1743,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="214,42"
-          Id="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks"
-          TopLeft="344,71" />
+          Size="150,42"
+          Id="Package\Import Treasury Checks into Excel\OLE DB Source"
+          TopLeft="337,149" />
         <NodeLayout
           Size="159,42"
           Id="Package\Import Treasury Checks into Excel\Excel Destination"
-          TopLeft="354,249" />
+          TopLeft="396,317" />
         <NodeLayout
           Size="156,42"
           Id="Package\Import Treasury Checks into Excel\Data Conversion"
-          TopLeft="415,169" />
+          TopLeft="352,230" />
         <EdgeLayout
           Id="Package\Import Treasury Checks into Excel.Paths[OLE DB Source Output]"
-          TopLeft="451,113">
+          TopLeft="412,191">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="42,56"
+              EndConnector="18,39"
               Start="0,0"
-              End="42,48.5">
+              End="18,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24" />
+                    End="0,15.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
                   <mssgle:LineSegment
-                    End="38,28" />
+                    End="14,19.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="38,28"
-                    Point2="42,28"
-                    Point3="42,32" />
+                    Point1="14,19.5"
+                    Point2="18,19.5"
+                    Point3="18,23.5" />
                   <mssgle:LineSegment
-                    End="42,48.5" />
+                    End="18,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1699,30 +1790,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Treasury Checks into Excel.Paths[Data Conversion Output]"
-          TopLeft="493,211">
+          TopLeft="430,272">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-59.5,38"
+              EndConnector="45.5,45"
               Start="0,0"
-              End="-59.5,30.5">
+              End="45.5,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15" />
+                    End="0,18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="-4,19" />
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
                   <mssgle:LineSegment
-                    End="-55.5,19" />
+                    End="41.5,22.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-55.5,19"
-                    Point2="-59.5,19"
-                    Point3="-59.5,23" />
+                    Point1="41.5,22.5"
+                    Point2="45.5,22.5"
+                    Point3="45.5,26.5" />
                   <mssgle:LineSegment
-                    End="-59.5,30.5" />
+                    End="45.5,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1735,7 +1826,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Treasury Checks into Excel\OLE DB Source -TR_Tchecks">
+    design-time-name="Package\Import Treasury Checks into Excel\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
