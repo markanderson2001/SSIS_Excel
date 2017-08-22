@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{F11CB67C-7E02-4298-9F75-665B5F3D0E36}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{781C245C-3C5E-4DAD-A569-15114F612795}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjdhRb7jMAky16gWnnTZASwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADfSh6dB2WhV+DVm4hG9YBa5M2MdGstRBud12BkcliCswAAAAAOgAAAAAIAACAAAAA5awL/hXxfZGNkNUM5Fhi1ZYzEgFRgiSuJ9qcAkka6cCAAAADebWklxQj8Fix+n11LkOofYPuANSK7PgYrb88HMeS24EAAAABDbb1HSBr2d9Fb75NKRx1fw81/bkdFA0zvmIgPG+DY9wdCSz4lsnobFuu96PufJIYdH6LPSQ8/IgpZFIFJAxLx</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjdhRb7jMAky16gWnnTZASwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA4AuOtcnh5N6QEt+0oz/LR52guGWVV/fuS6fT+ZJBEjgAAAAAOgAAAAAIAACAAAABMroRNv/GM6g0jVS9of516XWyuseYlNlkqFlIhQv9agSAAAAAUYW6PggaRRvbwjRcpk8+CLHZw4uEfEj6Y9icnjjCfnEAAAAChaAbJUIEaPYVR6hpQ0Rn3sNNA58lNzeT3c1mP3z+vOeu3f7ZMCwq1m3LsarvT9xvRbVnIedfMbm/VCWG+VdZd</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -472,7 +472,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Excel_Destination2</property>
+                  name="OpenRowset">Excel_Destination3</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -654,6 +654,54 @@
                       refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[tr_directdep]"
                       dataType="nText"
                       name="tr_directdep" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of id]"
+                      dataType="r8"
+                      name="Copy of id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of year]"
+                      dataType="nText"
+                      name="Copy of year" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_type]"
+                      dataType="nText"
+                      name="Copy of tr_type" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_posted]"
+                      dataType="nText"
+                      name="Copy of tr_posted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_acctnum]"
+                      dataType="nText"
+                      name="Copy of tr_acctnum" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_descrip]"
+                      dataType="nText"
+                      name="Copy of tr_descrip" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_amount]"
+                      dataType="r8"
+                      name="Copy of tr_amount" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_date]"
+                      dataType="date"
+                      name="Copy of tr_date" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_num]"
+                      dataType="r8"
+                      name="Copy of tr_num" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tchkdate]"
+                      dataType="date"
+                      name="Copy of tchkdate" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_class]"
+                      dataType="nText"
+                      name="Copy of tr_class" />
+                    <externalMetadataColumn
+                      refId="Package\Import Treasury Checks into Excel\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Copy of tr_directdep]"
+                      dataType="nText"
+                      name="Copy of tr_directdep" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1745,41 +1793,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="150,42"
           Id="Package\Import Treasury Checks into Excel\OLE DB Source"
-          TopLeft="337,149" />
+          TopLeft="73,84" />
         <NodeLayout
           Size="159,42"
           Id="Package\Import Treasury Checks into Excel\Excel Destination"
-          TopLeft="396,317" />
+          TopLeft="471,309" />
         <NodeLayout
           Size="156,42"
           Id="Package\Import Treasury Checks into Excel\Data Conversion"
-          TopLeft="352,230" />
+          TopLeft="70,220" />
         <EdgeLayout
           Id="Package\Import Treasury Checks into Excel.Paths[OLE DB Source Output]"
-          TopLeft="412,191">
+          TopLeft="148,126">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18,39"
+              EndConnector="0,94"
               Start="0,0"
-              End="18,31.5">
+              End="0,86.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="4,19.5" />
-                  <mssgle:LineSegment
-                    End="14,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14,19.5"
-                    Point2="18,19.5"
-                    Point3="18,23.5" />
-                  <mssgle:LineSegment
-                    End="18,31.5" />
+                    End="0,86.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1790,30 +1826,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Treasury Checks into Excel.Paths[Data Conversion Output]"
-          TopLeft="430,272">
+          TopLeft="148,262">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.5,45"
+              EndConnector="402.5,47"
               Start="0,0"
-              End="45.5,37.5">
+              End="402.5,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
+                    End="0,19.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
                   <mssgle:LineSegment
-                    End="41.5,22.5" />
+                    End="398.5,23.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="41.5,22.5"
-                    Point2="45.5,22.5"
-                    Point3="45.5,26.5" />
+                    Point1="398.5,23.5"
+                    Point2="402.5,23.5"
+                    Point3="402.5,27.5" />
                   <mssgle:LineSegment
-                    End="45.5,37.5" />
+                    End="402.5,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
