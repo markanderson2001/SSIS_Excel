@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{781C245C-3C5E-4DAD-A569-15114F612795}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{53A68268-CC0A-4BC3-A323-0243C8CEA60C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjdhRb7jMAky16gWnnTZASwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA4AuOtcnh5N6QEt+0oz/LR52guGWVV/fuS6fT+ZJBEjgAAAAAOgAAAAAIAACAAAABMroRNv/GM6g0jVS9of516XWyuseYlNlkqFlIhQv9agSAAAAAUYW6PggaRRvbwjRcpk8+CLHZw4uEfEj6Y9icnjjCfnEAAAAChaAbJUIEaPYVR6hpQ0Rn3sNNA58lNzeT3c1mP3z+vOeu3f7ZMCwq1m3LsarvT9xvRbVnIedfMbm/VCWG+VdZd</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJT2ORYA8SUibaBzN20a/uwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACCXJ9ELb/s1Kg+YHBeYHQ1gUnSsWRifY3T0UMv4kTqQAAAAAAOgAAAAAIAACAAAAAeZzPk+wjfhig1DWEVxZtKpC7NJEcmKYR+SWQum0zKrSAAAAAUKrwp7UYbZgRHeSdLMx9C1v2AToa5Hv/NRBKo9E310EAAAAADzr70XhbUee53QzZP5EQ7L+G+1HFDgoid32U0SqE02YKaXlL3aNuKFCzPTZa/C6eLYm6VbD5HnPRFOa2kR6ll</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,7 +58,7 @@
       DTS:ObjectName="Excel Connection Manager 2">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Shared\GitHub\Project Files\SSIS_ConvertDbExcel\TR_TchecksList.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Shared\GitHub\Project Files\SSIS_ConvertDbExcel\TR_TchecksList.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -472,7 +472,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Excel_Destination3</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -507,8 +507,8 @@
               <connections>
                 <connection
                   refId="Package\Import Treasury Checks into Excel\Excel Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -746,7 +746,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[tchecks]</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -781,8 +781,8 @@
               <connections>
                 <connection
                   refId="Package\Import Treasury Checks into Excel\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DEVELOP-2016\MSSQLSERV2016DEV.ADPCt830.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[DEVELOP-2016\MSSQLSERV2016DEV.ADPCt830.sa]"
+                  connectionManagerID="{468E7825-594B-46FF-9BB8-A0C7F2012DAF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).ADPCt830.sa]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1120,14 +1120,37 @@
           VSTAMinorVersion="0"
           Language="CSharp">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_652ff073be7a4e748f6dfa2d514b723b")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_652ff073be7a4e748f6dfa2d514b723b")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1499,37 +1522,14 @@ namespace ST_652ff073be7a4e748f6dfa2d514b723b.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_652ff073be7a4e748f6dfa2d514b723b")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_652ff073be7a4e748f6dfa2d514b723b")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-
-
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1736,7 +1736,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="240,42"
           Id="Package\Import Treasury Checks into Excel"
-          TopLeft="111,241" />
+          TopLeft="163,232" />
         <NodeLayout
           Size="131,42"
           Id="Package\Script Task"
@@ -1747,26 +1747,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.5,87"
+              EndConnector="92.5,78"
               Start="0,0"
-              End="40.5,79.5">
+              End="92.5,70.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5" />
+                    End="0,35" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.5"
-                    Point2="0,43.5"
-                    Point3="4,43.5" />
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="4,39" />
                   <mssgle:LineSegment
-                    End="36.5,43.5" />
+                    End="88.5,39" />
                   <mssgle:CubicBezierSegment
-                    Point1="36.5,43.5"
-                    Point2="40.5,43.5"
-                    Point3="40.5,47.5" />
+                    Point1="88.5,39"
+                    Point2="92.5,39"
+                    Point3="92.5,43" />
                   <mssgle:LineSegment
-                    End="40.5,79.5" />
+                    End="92.5,70.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1795,13 +1795,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Import Treasury Checks into Excel\OLE DB Source"
           TopLeft="73,84" />
         <NodeLayout
-          Size="159,42"
-          Id="Package\Import Treasury Checks into Excel\Excel Destination"
-          TopLeft="471,309" />
-        <NodeLayout
           Size="156,42"
           Id="Package\Import Treasury Checks into Excel\Data Conversion"
           TopLeft="70,220" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Import Treasury Checks into Excel\Excel Destination"
+          TopLeft="471,309" />
         <EdgeLayout
           Id="Package\Import Treasury Checks into Excel.Paths[OLE DB Source Output]"
           TopLeft="148,126">
